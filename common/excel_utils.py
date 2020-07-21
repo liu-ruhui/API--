@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 # @author:lrh
-# @file:excel_utils.py
+# @file:excel封装方法
 # @time:2020/7/15 15:56
 
 import os
@@ -54,7 +54,7 @@ class ExcelUtils():
         first_row = self.sheet.row(0)  #获取首行数据
         for row in range(1, self.get_row_count()):
             row_dict = {}
-            for col in range(0, excelUtils.get_col_count()):
+            for col in range(0, self.get_col_count()):
                 row_dict[first_row[col].value] = self.get_merged_cell_value(row, col)
             all_data_list.append(row_dict)
         return all_data_list
